@@ -1,0 +1,153 @@
+services:
+  node1:
+    build: .
+    container_name: node1
+    ports:
+      - "8331:8333"
+      - "8332:8332"
+    volumes:
+      - node1_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.2
+
+  node2:
+    build: .
+    container_name: node2
+    ports:
+      - "8334:8333"
+      - "8335:8332"
+    volumes:
+      - node2_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.3
+
+  node3:
+    build: .
+    container_name: node3
+    ports:
+      - "8336:8333"
+      - "8337:8332"
+    volumes:
+      - node3_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.4
+
+  node4:
+    build: .
+    container_name: node4
+    ports:
+      - "8338:8333"
+      - "8339:8332"
+    volumes:
+      - node4_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.5
+
+  node5:
+    build: .
+    container_name: node5
+    ports:
+      - "8340:8333"
+      - "8341:8332"
+    volumes:
+      - node5_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.6
+
+  node6:
+    build: .
+    container_name: node6
+    ports:
+      - "8342:8333"
+      - "8343:8332"
+    volumes:
+      - node6_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.7
+
+  node7:
+    build: .
+    container_name: node7
+    ports:
+      - "8344:8333"
+      - "8345:8332"
+    volumes:
+      - node7_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.8
+
+  node8:
+    build: .
+    container_name: node8
+    ports:
+      - "8346:8333"
+      - "8347:8332"
+    volumes:
+      - node8_data:/root/.multichain
+    networks:
+      multichain_net:
+        ipv4_address: 172.20.0.9
+
+networks:
+  multichain_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  node1_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo1
+      o: bind
+  node2_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo2
+      o: bind
+  node3_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo3
+      o: bind
+  node4_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo4
+      o: bind
+  node5_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo5
+      o: bind
+  node6_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo6
+      o: bind
+  node7_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo7
+      o: bind
+  node8_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/Users/paezm/OneDrive - uniminuto.edu/Universidad/Sistemas Dristribuidos/tecerCorte/multichain/nodo8
+      o: bind
