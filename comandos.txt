@@ -1,0 +1,14 @@
+multichain-util create chain1
+multichaind chain1 -daemon
+multichain-cli chain1 getaddressbalances [wallet-address]
+multichain-cli chain1 listaddresstransactions [wallet-address]
+multichain-cli chain1 getrawtransaction [txid] 1
+multichain-cli chain1 importaddress 1Ueroju6RwfEBotW8zMrvksbCPPH5R7aqUz4xF
+initial-block-reward = 1000000000       # Initial block mining reward in raw native currency units. (0 - 1000000000000000000)
+first-block-reward = 1000000000 
+
+
+
+Enviar saldo
+
+multichain-cli chain1 sendfrom 1D6rVATwgVc59LbmHgHMiTf4K4BGcaBXwCjbpJ 1Ueroju6RwfEBotW8zMrvksbCPPH5R7aqUz4xF 5

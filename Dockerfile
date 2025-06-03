@@ -4,8 +4,9 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Actualizar e instalar dependencias
+RUN apt update && apt upgrade
 RUN apt-get update && \
-    apt-get install -y wget curl unzip python3 python3-pip && \
+    apt-get install -y wget curl unzip python3 python3-pip python3-flask python3-requests && \
     pip3 install --break-system-packages savoir && \
     rm -rf /var/lib/apt/lists/*
 
